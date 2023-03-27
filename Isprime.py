@@ -8,6 +8,4 @@ while counter < num:
     else:
         counter = counter + 1
 if isprime:
-    print("This is a prime number!")
-else:
-    print("This is not a Prime number")
+    print(num)
