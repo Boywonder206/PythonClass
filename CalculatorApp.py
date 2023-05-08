@@ -32,6 +32,20 @@ def C():
     global currentText
     currentText = "0"
     updateText()
+def Back():
+    global currentText
+    currentText = currentText[0:len(currentText)-1]
+    if len(currentText) == 0:
+        currentText = "0"
+    updateText()
+def Plus_Minus():
+    global currentText
+    if '-' in currentText:
+        currentText = currentText.replace('-', '')
+    else:
+        currentText = '-' + currentText
+    updateText()
+
 
 
 app = ctk.CTk()
@@ -51,7 +65,7 @@ btnCE = ctk.CTkButton( btnframe, text="CE",width=75, height=65 ,font=ctk.CTkFont
 btnCE.grid(row=0, column=0, padx=5, pady=5)
 btnC = ctk.CTkButton(btnframe, text="C", font=ctk.CTkFont(size=20),bg_color="white" ,fg_color="red", width=75, height=65, command=C)
 btnC.grid(row=0, column=1, padx=5, pady=5)
-btnbackspace = ctk.CTkButton(btnframe, text="<--", font=ctk.CTkFont(size=20),bg_color="white" ,fg_color="red", width=75, height=65)
+btnbackspace = ctk.CTkButton(btnframe, text="<--", font=ctk.CTkFont(size=20),bg_color="white" ,fg_color="red", width=75, height=65, command=Back)
 btnbackspace.grid(row=0, column=2, padx=5, pady=5)
 btndivide = ctk.CTkButton(btnframe, text="/", font=ctk.CTkFont(size=20),bg_color="white" ,fg_color="red", width=75, height=65)
 btndivide.grid(row=0, column=3, padx=5, pady=5)
@@ -71,7 +85,7 @@ btn5 = ctk.CTkButton(btnframe, text="5", font=ctk.CTkFont(size=20),bg_color="whi
 btn5.grid(row=2, column=1, padx=5, pady=5)
 btn6 = ctk.CTkButton(btnframe, text="6", font=ctk.CTkFont(size=20),bg_color="white" ,fg_color="blue", width=75, height=65, command=lambda : addText("6"))
 btn6.grid(row=2, column=2, padx=5, pady=5)
-btnsubtract = ctk.CTkButton(btnframe, text="-", font=ctk.CTkFont(size=20),bg_color="white" ,fg_color="red", width=75, height=65)
+btnsubtract = ctk.CTkButton(btnframe, text="----", font=ctk.CTkFont(size=20),bg_color="white" ,fg_color="red", width=75, height=65)
 btnsubtract.grid(row=2, column=3, padx=5, pady=5)
 
 btn1 = ctk.CTkButton(btnframe, text="1", font=ctk.CTkFont(size=20),bg_color="white" ,fg_color="blue", width=75, height=65, command=lambda : addText("1"))
@@ -83,7 +97,7 @@ btn3.grid(row=3, column=2, padx=5, pady=5)
 btnaddition = ctk.CTkButton(btnframe, text="+", font=ctk.CTkFont(size=20),bg_color="white" ,fg_color="red", width=75, height=65)
 btnaddition.grid(row=3, column=3, padx=5, pady=5)
 
-btnopposite = ctk.CTkButton(btnframe, text="+/-", font=ctk.CTkFont(size=20),bg_color="white" ,fg_color="blue", width=75, height=65)
+btnopposite = ctk.CTkButton(btnframe, text="+/-", font=ctk.CTkFont(size=20),bg_color="white" ,fg_color="blue", width=75, height=65, command=Plus_Minus)
 btnopposite.grid(row=4, column=0, padx=5, pady=5)
 btn0 = ctk.CTkButton(btnframe, text="0", font=ctk.CTkFont(size=20),bg_color="white" ,fg_color="blue", width=75, height=65, command=lambda : addText("0"))
 btn0.grid(row=4, column=1, padx=5, pady=5)
