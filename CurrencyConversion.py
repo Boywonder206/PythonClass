@@ -108,6 +108,33 @@ def ZAR_clicked():
     hey = str(hey)
     ZARList = ["Your amount in dollars is", hey, "but your amount in South Africian Rand is", translation]
     response.configure(text='\n'.join(ZARList))
+def KD_clicked():
+    print("")
+    hey = textbox.get()
+    hey = int(hey)
+    translation = (hey) * 0.31
+    translation = str(translation)
+    hey = str(hey)
+    KDList = ["Your amount in dollars is", hey, "but your amount in Brazilian Reals is", translation]
+    response.configure(text='\n'.join(KDList))
+def BR_clicked():
+    print("")
+    hey = textbox.get()
+    hey = int(hey)
+    translation = (hey) * 5
+    translation = str(translation)
+    hey = str(hey)
+    BRList = ["Your amount in dollars is", hey, "but your amount in Brazilian Reals is", translation]
+    response.configure(text='\n'.join(BRList))
+def RR_clicked():
+    print("")
+    hey = textbox.get()
+    hey = int(hey)
+    translation = (hey) * 77.72
+    translation = str(translation)
+    hey = str(hey)
+    RRList = ["Your amount in dollars is", hey, "but your amount in Russian Rubles is", translation]
+    response.configure(text='\n'.join(RRList))
 
 app = ctk.CTk()
 app.title("Dollars to any currency")
@@ -154,6 +181,15 @@ Mexicobutton.grid(row=3, column=1, pady=5)
 
 ZARbutton = ctk.CTkButton(app, text="ZAR", command=ZAR_clicked, font=ctk.CTkFont(size=20))
 ZARbutton.grid(row=4, column=1, pady=5)
+
+Kuwaitbutton = ctk.CTkButton(app, text="Kuwait Dinars", command=KD_clicked, font=ctk.CTkFont(size=20))
+Kuwaitbutton.grid(row=5, column=1, pady=5)
+
+BRbutton = ctk.CTkButton(app, text="Brazilian Reals", command=BR_clicked, font=ctk.CTkFont(size=20))
+BRbutton.grid(row=6, column=1, pady=5)
+
+RRbutton = ctk.CTkButton(app, text="Russian Rubles", command=RR_clicked, font=ctk.CTkFont(size=20))
+RRbutton.grid(row=7, column=1, pady=5)
 
 label = ctk.CTkLabel(app, text="Click another currency for us to convert", font=ctk.CTkFont(size=20))
 label.grid(row=1, column=0)
