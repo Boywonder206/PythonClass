@@ -191,6 +191,9 @@ BRbutton.grid(row=6, column=1, pady=5)
 RRbutton = ctk.CTkButton(app, text="Russian Rubles", command=RR_clicked, font=ctk.CTkFont(size=20))
 RRbutton.grid(row=7, column=1, pady=5)
 
+KSbutton = ctk.CTkButton(app, text="Kenya Shillings", command=KS_clicked, font=ctk.CTkFont(size=20))
+KSbutton.grid(row=8, column=1, pady=5)
+
 label = ctk.CTkLabel(app, text="Click another currency for us to convert", font=ctk.CTkFont(size=20))
 label.grid(row=1, column=0)
 
